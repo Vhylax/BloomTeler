@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BloomTeler</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- BACKGROUND -->
+<div class="fruit" style="top:10%;left:5%">🍓</div>
+<div class="fruit" style="top:40%;left:75%">🥭</div>
+<div class="fruit" style="top:70%;left:15%">🥥</div>
+<div class="fruit" style="top:85%;left:80%">🍍</div>
+
+<header>
+  <div class="logo">
+    <div class="logo-box">🍧</div>
+    <div class="logo-text">BloomTeler</div>
+  </div>
+  <div class="menu-btn" onclick="toggleMenu()">☰ <span id="cart-count">0</span></div>
+  <div class="menu" id="menu">
+    <button onclick="show('beranda')">Beranda</button>
+    <button onclick="show('varian')">Varian</button>
+    <button onclick="show('keranjang')">Keranjang</button>
+  </div>
+</header>
+
+<div id="notification" class="notification">
+  <span id="notif-emoji"></span>
+  <span id="notif-text"></span>
+</div>
+
+<section id="beranda" class="active hero">
+  <div class="big-logo">🍧</div>
+  <div class="slogan">Segarnya Nyata, Manisnya Bikin Bahagia 💖</div>
+  <div class="funfact" id="funfact"></div>
+  <p class="description">
+    BloomTeler adalah destinasi terbaik untuk menikmati es teler dengan rasa autentik dan topping melimpah. Setiap gelas dipersiapkan dengan hati-hati, memadukan alpukat segar, kelapa muda yang renyah, nangka manis, dan sirup pilihan. Ditambah susu lembut atau es krim creamy sesuai varian, minuman ini tidak hanya menyegarkan tetapi juga memberikan pengalaman rasa yang memuaskan. Cocok untuk dinikmati kapan saja.
+  </p>
+  <div class="review">⭐⭐⭐⭐⭐ “Seger banget, buahnya fresh dan topping nggak pelit. Cocok buat cuaca panas.”</div>
+  <div class="review">⭐⭐⭐⭐⭐ “Milk teler dan boba favorit aku. Rasanya lembut tapi manisnya pas.”</div>
+  <div class="review">⭐⭐⭐⭐ “Ice cream vanilla nya mantap, bikin mood naik setiap beli.”</div>
+  <div class="review">⭐⭐⭐⭐⭐ “Coklat dan mango cream nya selalu bikin ketagihan.”</div>
+  <div class="review">⭐⭐⭐⭐⭐ “Kelapa special nya bikin hidrasi tambah bagus, pas banget buat anak sekolah.”</div>
+</section>
+
+<section id="varian">
+<h3>🍹 Varian BloomTeler</h3>
+<div class="products" id="products">
+  <div class="card pink"><span>🍧</span><h4>Original</h4><p>Alpukat, kelapa muda, nangka, es serut + sirup segar</p><div class="price">Rp8.000</div><button onclick="add('Original',8000,'🍧')">Tambah</button></div>
+  <div class="card blue"><span>🧋</span><h4>Boba Teler</h4><p>Boba kenyal manis</p><div class="price">Rp13.000</div><button onclick="add('Boba Teler',13000,'🧋')">Tambah</button></div>
+  <div class="card pink"><span>🥤</span><h4>Milk Teler</h4><p>Susu manis lembut</p><div class="price">Rp9.000</div><button onclick="add('Milk Teler',9000,'🥤')">Tambah</button></div>
+  <div class="card blue"><span>🍸</span><h4>Fruit Mix</h4><p>Buah segar dicampur sirup</p><div class="price">Rp11.000</div><button onclick="add('Fruit Mix',11000,'🍸')">Tambah</button></div>
+  <div class="card pink"><span>🍨</span><h4>Ice Cream</h4><p>Vanilla creamy, topping melimpah</p><div class="price">Rp12.000</div><button onclick="add('Ice Cream',12000,'🍨')">Tambah</button></div>
+  <div class="card blue"><span>🥝</span><h4>Mango Cream</h4><p>Mangga manis + susu lembut</p><div class="price">Rp12.000</div><button onclick="add('Mango Cream',12000,'🥝')">Tambah</button></div>
+  <div class="card pink"><span>🍫</span><h4>Coklat Delight</h4><p>Coklat kental + topping boba</p><div class="price">Rp14.000</div><button onclick="add('Coklat Delight',14000,'🍫')">Tambah</button></div>
+  <div class="card blue"><span>🥥</span><h4>Kelapa Special</h4><p>Kelapa muda segar + es serut</p><div class="price">Rp10.000</div><button onclick="add('Kelapa Special',10000,'🥥')">Tambah</button></div>
+  <div class="card pink"><span>🍊</span><h4>Nangka Lover</h4><p>Nangka manis + santan lembut</p><div class="price">Rp11.000</div><button onclick="add('Nangka Lover',11000,'🍊')">Tambah</button></div>
+  <div class="card blue"><span>🍓</span><h4>Strawberry Cream</h4><p>Strawberry segar + es krim vanilla</p><div class="price">Rp13.000</div><button onclick="add('Strawberry Cream',13000,'🍓')">Tambah</button></div>
+  <div class="card pink"><span>🍍</span><h4>Pina Colada</h4><p>Nanas & kelapa + sirup segar</p><div class="price">Rp12.000</div><button onclick="add('Pina Colada',12000,'🍍')">Tambah</button></div>
+  <div class="card blue"><span>❤️</span><h4>Red Velvet</h4><p>Rasa red velvet + boba chewy</p><div class="price">Rp14.000</div><button onclick="add('Red Velvet',14000,'❤️')">Tambah</button></div>
+</div>
+</section>
+
+<section id="keranjang" class="box">
+<h3>🛒 Keranjang</h3>
+<div id="cart"></div>
+<b>Total: Rp<span id="total">0</span></b><br><br>
+<button onclick="showKonfirmasi()" style="background:#ff5fa2;color:white;border:none;padding:10px 20px;border-radius:10px;cursor:pointer;">Konfirmasi</button>
+
+<h3 style="margin-top:20px">📜 Riwayat Pesanan</h3>
+<ul id="history" class="history-list"></ul>
+<button onclick="showModalHapus()" style="background:#ff5fa2;color:white;border:none;padding:10px 20px;border-radius:10px;cursor:pointer;">Hapus Riwayat</button>
+
+<div style="margin-top:15px;text-align:center;">
+  <h4>💳 Bayar via QRIS</h4>
+  <img src="https://drive.google.com/thumbnail?id=1Tti4RW42KZdUIBfkfXS4pSfOYN0AQPxr" alt="QRIS" style="width:150px;">
+</div>
+
+<div class="promo-grid">
+  <div class="promo pink">🚚 Gratis Ongkir<br><small>Min. pembelian tertentu</small></div>
+  <div class="promo blue">🎁 Diskon Harian<br><small>Setiap hari ada promo</small></div>
+  <div class="promo pink">⭐ Rating 4./5<br><small>Dari ratusan pembeli</small></div>
+  <div class="promo blue">💳 Bayar Cepat<br><small>Transfer & e-wallet</small></div>
+</div>
+
+<div class="social">
+  <div>📲 WhatsApp: +62 881-1110-288</div>
+  <div>📸 Instagram: @bloomteler</div>
+  <div>🎵 TikTok: @bloomteler</div>
+  <div>✈️ Telegram: @telerr</div>
+</div>
+</section>
+
+<!-- MODAL KONFRIMASI -->
+<div id="modal-konfirmasi" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3>Konfirmasi Pesanan</h3>
+    <input type="text" id="nama" placeholder="Masukkan Nama" required>
+    <input type="tel" id="telepon" placeholder="No Telepon" required>
+    <select id="metode" onchange="updateMetode()" required>
+      <option value="">Pilih Metode Pembayaran</option>
+      <option value="cash">Cash</option>
+      <option value="qris">QRIS</option>
+      <option value="bank">Via Bank</option>
+    </select>
+    <div id="metode-detail" style="display:none;">
+      <!-- Detail metode jika perlu -->
+    </div>
+    <button id="btn-konfirmasi" onclick="konfirmasiPenuh()" disabled>Konfirmasi Penuh</button>
+  </div>
+</div>
+
+<!-- MODAL HAPUS RIWAYAT -->
+<div id="modal-hapus" class="modal">
+  <div class="modal-content">
+    <h3>Apakah Yakin ingin menghapus riwayat?</h3>
+    <button onclick="hapusRiwayat()">Iya</button>
+    <button onclick="closeModalHapus()">Tidak</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
